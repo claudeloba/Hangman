@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "node Hangman.js"
+  },
+  "author": "Claude Loba",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
