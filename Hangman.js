@@ -9,13 +9,15 @@ name = name.replace(firstLetter, firstLetter.toUpperCase());
 console.log(`Hi, ${name}! Let's play a game!\nIt's called the Hangman!`);
 console.log("The rules are: I will think of a word, while you guess a letter.\nAnd for everytime you're wrong you'll lose 1 guess...\nBut don't worry... I'll give you 5 guesses in total.\nLet's go!");
 
-let randomWord = Math.floor(Math.random() * 3);
-switch (randomWord) {
-  case 0: randomWord = 'javascript'; break;
-  case 1: randomWord = 'dotnet'; break;
-  case 2: randomWord = 'python'; break;
-  case 3: randomWord = 'java'; break;
-}
+let hangmanFree = `
+      \\O/
+       |
+      / \\
+ `;
+
+let randomWord = Math.floor(Math.random() * 10);
+
+randomWord = ['javascript', 'python', 'java', 'dotnet', 'csharp', 'apple', 'windows', 'samsung', 'ai'][randomWord];
 
 randomWord = randomWord.split('');
 
@@ -39,7 +41,8 @@ while (guessesLeft > 0) {
     console.log('\nNice one! You got it.');
     console.log(`This is what the word looks like now: ${randomWordHidden.join('')}\nGive me another one.`);
     if (randomWordHidden.join('') === randomWord.join('')) {
-      console.log(`\nWow ${name}! You did it...\nI admit defeat.\nThe word was: ${randomWord.join('')}`);
+      console.log(`\nWow ${name}! You did it...\nYou freed the hangman!\nThe word was: ${randomWord.join('')}`);
+      console.log(hangmanFree);
       break;
     }
   } else {
